@@ -1,0 +1,311 @@
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  .header-title {
+    position: absolute;
+    width: 85%;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    height: auto;
+    text-align: justify;
+    padding-left: 12px;
+    h3 {
+      font-size: 1rem;
+      color: $red;
+    }
+    h1 {
+      font-size: 2.3rem;
+      color: $white;
+    }
+    h2 {
+      font-size: 1.3rem;
+      color: $gray;
+    }
+    p {
+      width: 100%;
+      margin-top: 1rem;
+      font-size: 15px;
+      color: $gray;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -10%;
+      height: 120%;
+      width: 2px;
+      background: $red;
+    }
+  }
+  .header-links {
+    position: absolute;
+    width: auto;
+    height: auto;
+    bottom: 23%;
+    left: 50%;
+    transform: translate(-50%);
+    height: auto;
+    &::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: 1px;
+      width: 110%;
+      background: $gray;
+    }
+    ul {
+      list-style: none;
+      @include flex(center, center, row);
+      li {
+        margin: 0 1rem;
+        padding: 5px;
+        background: $black-blue;
+        a {
+          z-index: 999;
+          position: relative;
+          @include flex(center, center, row);
+          text-decoration: none;
+          width: 35px;
+          height: 35px;
+          font-size: 25px;
+          color: $gray;
+          &:hover {
+            color: $red;
+            transform: translateY(-3px);
+          }
+        }
+      }
+    }
+  }
+  .header-phrase {
+    position: absolute;
+    width: auto;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%);
+    height: auto;
+    text-align: center;
+    p {
+      font-size: 1rem;
+      color: $white;
+      font-family: "Mulish", sans-serif;
+      letter-spacing: 1px;
+    }
+  }
+  .header-email {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    .header-title {
+      width: 65%;
+      height: auto;
+      top: 25%;
+      left: 10%;
+      transform: none;
+      h3 {
+        font-size: 1.3rem;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      h2 {
+        font-size: 1.7rem;
+      }
+      p {
+        font-size: 1.08rem;
+      }
+    }
+    .header-links {
+      bottom: 17%;
+      &::after {
+        width: 140%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .header {
+    width: 80%;
+    margin: auto;
+    .header-title {
+      width: 70%;
+      height: auto;
+      top: 22%;
+      left: 10%;
+      transform: none;
+      h3 {
+        font-size: 1.4rem;
+      }
+      h1 {
+        font-size: 3.2rem;
+      }
+      h2 {
+        font-size: 1.9rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+    .header-links {
+      left: unset;
+      right: 10%;
+      transform: translate(0%, -50%);
+      padding-right: 12px;
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -10%;
+        height: 120%;
+        width: 2px;
+        background: $red;
+      }
+      ul {
+        li {
+          margin: 0 0 0 1rem;
+          a {
+            width: 40px;
+            height: 40px;
+            font-size: 30px;
+            transition: 0.2s;
+          }
+        }
+      }
+      &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        left: unset;
+        right: 12px;
+        top: 50%;
+        transform: translate(0%, -50%);
+        height: 1px;
+        width: 110%;
+        background: $gray;
+      }
+    }
+    .header-email {
+      display: unset;
+      position: absolute;
+      left: 10%;
+      bottom: 22.5%;
+      padding-left: 12px;
+      a {
+        position: relative;
+        text-decoration: none;
+        color: $gray;
+        font-size: 1.2rem;
+        background: $black-blue;
+        padding: 5px 10px 10px 0;
+        letter-spacing: 1px;
+        transition: 0.2s;
+        &:hover {
+          color: $red;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -10%;
+        height: 120%;
+        width: 2px;
+        background: $red;
+      }
+      &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translate(0%, -50%);
+        height: 1px;
+        width: 120%;
+        background: $gray;
+      }
+    }
+    .header-phrase {
+      p {
+        font-size: 1.2rem;
+        margin: 0 12px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -10%;
+        height: 120%;
+        width: 2px;
+        background: $red;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -10%;
+        height: 120%;
+        width: 2px;
+        background: $red;
+      }
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   width: 30%;
+      //   height: 1px;
+      //   background: $gray;
+      //   bottom: -5px;
+      //   left: 50%;
+      //   transform: translate(-50%);
+      // }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .header {
+    width: 60%;
+    .header-title {
+      width: 70%;
+      h3 {
+        font-size: 1.5rem;
+      }
+      h1 {
+        font-size: 3.4rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+    }
+    .header-links {
+      ul {
+        li {
+          margin: 0 0 0 1rem;
+          a {
+            width: 42px;
+            height: 42px;
+            font-size: 32px;
+            transition: 0.2s;
+          }
+        }
+      }
+    }
+    .header-email {
+      bottom: 23%;
+      a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

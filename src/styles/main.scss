@@ -1,0 +1,135 @@
+@import "./_variables.scss";
+@import "./_header.scss";
+@import "./_techs.scss";
+@import "./_projects.scss";
+@import "./_about.scss";
+@import "./_footer.scss";
+
+// font-family: 'Overpass', sans-serif;
+// font-family: 'Mulish', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Overpass", sans-serif;
+  h1,
+  h2,
+  h3 {
+    font-family: "Mulish", sans-serif;
+  }
+}
+body {
+  position: relative;
+  background: $black-blue;
+}
+main {
+  width: 100%;
+  margin: 0;
+}
+em {
+  color: $red;
+}
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.aside-links {
+  position: fixed;
+  width: 60px;
+  height: 400px;
+  left: 0%;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  @include flex(center, center, column);
+  transition: 0.3s ease-in;
+  a {
+    text-decoration: none;
+    color: $gray;
+    font-size: 25px;
+    margin: 20px 0;
+    padding: 10px 0;
+    background: $black-blue;
+    transition: 0.2s;
+    &:hover {
+      color: $red;
+    }
+  }
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 1px;
+    background: $gray;
+  }
+}
+.aside-navigation {
+  position: fixed;
+  width: 60px;
+  height: 250px;
+  right: 0%;
+  top: 50%;
+  transform: translate(100%, -50%);
+  @include flex(center, center, column);
+  a {
+    text-decoration: none;
+    color: $gray;
+    font-size: 12px;
+    margin: 5px;
+    padding: 10px 0;
+    background: $black-blue;
+    transition: 0.2s;
+    &:hover {
+      color: $red;
+    }
+    &:hover span {
+      position: absolute;
+      transform: translateX(-100%);
+      padding-right: 10px;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  span {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $red;
+  }
+
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 1px;
+    background: $gray;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .aside-links {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .aside-links {
+    display: flex;
+  }
+  .aside-navigation {
+    transform: translate(-105%, -50%);
+  }
+}
