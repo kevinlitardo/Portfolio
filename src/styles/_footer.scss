@@ -51,6 +51,14 @@
         background: $gray;
       }
     }
+    .footer-rights {
+      span {
+        font-size: 1.1rem;
+      }
+      em {
+        font-size: 1.1rem;
+      }
+    }
   }
 }
 
@@ -59,7 +67,7 @@
     .footer-rights {
       span {
         color: $white;
-        font-size: 20px;
+        font-size: 18px;
       }
       em {
         font-size: 18px;
@@ -73,7 +81,7 @@
     .footer-rights {
       span {
         color: $white;
-        font-size: 22px;
+        font-size: 20px;
       }
       em {
         font-size: 20px;

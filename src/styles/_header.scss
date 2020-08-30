@@ -20,13 +20,13 @@
       color: $white;
     }
     h2 {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       color: $gray;
     }
     p {
       width: 100%;
       margin-top: 1rem;
-      font-size: 15px;
+      font-size: 17px;
       color: $gray;
     }
     &::before {
@@ -40,6 +40,12 @@
     }
   }
   .header-links {
+    .header-links-mail {
+      display: inline-block;
+    }
+    .header-links-other {
+      @include flex(space-evenly, center, row);
+    }
     position: absolute;
     width: auto;
     height: auto;
@@ -47,6 +53,7 @@
     left: 50%;
     transform: translate(-50%);
     height: auto;
+    @include flex(space-evenly, center, row);
     &::after {
       content: "";
       z-index: -1;
@@ -58,52 +65,44 @@
       width: 110%;
       background: $gray;
     }
-    ul {
-      list-style: none;
+    a {
+      z-index: 999;
+      position: relative;
       @include flex(center, center, row);
-      li {
-        margin: 0 1rem;
-        padding: 5px;
-        background: $black-blue;
-        a {
-          z-index: 999;
-          position: relative;
-          @include flex(center, center, row);
-          text-decoration: none;
-          width: 35px;
-          height: 35px;
-          font-size: 25px;
-          color: $gray;
-          &:hover {
-            color: $red;
-            transform: translateY(-3px);
-          }
-        }
+      text-decoration: none;
+      width: 35px;
+      height: 35px;
+      font-size: 25px;
+      padding: 10px;
+      margin: 0 10px;
+      color: $gray;
+      background: $black-blue;
+      &:hover {
+        color: $red;
+        transform: translateY(-3px);
       }
     }
   }
-  .header-phrase {
-    position: absolute;
-    width: auto;
-    bottom: 2rem;
-    left: 50%;
-    transform: translate(-50%);
-    height: auto;
-    text-align: center;
-    p {
-      font-size: 1rem;
-      color: $white;
-      font-family: "Mulish", sans-serif;
-      letter-spacing: 1px;
-    }
-  }
-  .header-email {
-    display: none;
+}
+.header-phrase {
+  position: absolute;
+  width: auto;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%);
+  height: auto;
+  text-align: center;
+  p {
+    font-size: 1rem;
+    color: $white;
+    font-family: "Mulish", sans-serif;
+    letter-spacing: 1px;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .header {
+    margin-bottom: 200px;
     .header-title {
       width: 65%;
       height: auto;
@@ -111,22 +110,31 @@
       left: 10%;
       transform: none;
       h3 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
       }
       h1 {
-        font-size: 3rem;
+        font-size: 3.2rem;
       }
       h2 {
-        font-size: 1.7rem;
+        font-size: 2rem;
       }
       p {
-        font-size: 1.08rem;
+        font-size: 1.2rem;
       }
     }
     .header-links {
       bottom: 17%;
       &::after {
-        width: 140%;
+        width: 120%;
+      }
+      a {
+        margin: 0 15px;
+        padding: 10px 25px;
+      }
+    }
+    .header-phrase {
+      p {
+        font-size: 1.2rem;
       }
     }
   }
@@ -156,94 +164,84 @@
       }
     }
     .header-links {
-      left: unset;
-      right: 10%;
-      transform: translate(0%, -50%);
-      padding-right: 12px;
-      &::before {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: -10%;
-        height: 120%;
-        width: 2px;
-        background: $red;
-      }
-      ul {
-        li {
-          margin: 0 0 0 1rem;
-          a {
-            width: 40px;
-            height: 40px;
-            font-size: 30px;
-            transition: 0.2s;
+      justify-content: space-between;
+      width: 80%;
+      padding: 0 12px;
+      .header-links-mail {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        a {
+          margin: 0;
+          padding: 0;
+          width: auto;
+          &::after {
+            content: "Send me and Email!";
+            font-size: 16px;
+            margin-left: 12px;
+            font-family: "Mulish", sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
           }
         }
       }
-      &::after {
-        content: "";
-        z-index: -1;
-        position: absolute;
-        left: unset;
-        right: 12px;
-        top: 50%;
-        transform: translate(0%, -50%);
-        height: 1px;
-        width: 110%;
-        background: $gray;
-      }
-    }
-    .header-email {
-      display: unset;
-      position: absolute;
-      left: 10%;
-      bottom: 22.5%;
-      padding-left: 12px;
-      a {
+      .header-links-other {
+        margin: 0;
+        padding: 0;
         position: relative;
-        text-decoration: none;
-        color: $gray;
-        font-size: 1.2rem;
-        background: $black-blue;
-        padding: 5px 10px 10px 0;
-        letter-spacing: 1px;
-        transition: 0.2s;
-        &:hover {
-          color: $red;
+        a {
+          margin: 0;
+          margin-left: 30px;
         }
+        &::after {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          left: unset;
+          right: 12px;
+          top: 50%;
+          transform: translate(0%, -50%);
+          height: 1px;
+          width: 100%;
+          background: $gray;
+        }
+      }
+      a {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        transition: 0.2s;
       }
       &::before {
         content: "";
         position: absolute;
         left: 0;
         top: -10%;
-        height: 120%;
+        height: 110%;
         width: 2px;
         background: $red;
       }
       &::after {
-        content: "";
-        z-index: -1;
-        position: absolute;
-        left: 12px;
-        top: 50%;
-        transform: translate(0%, -50%);
-        height: 1px;
-        width: 120%;
-        background: $gray;
+        background: $red;
+        left: unset;
+        transform: none;
+        right: 0;
+        top: -10%;
+        height: 110%;
+        width: 2px;
       }
     }
     .header-phrase {
       p {
         font-size: 1.2rem;
-        margin: 0 12px;
+        margin: 0 30px;
       }
       &::before {
         content: "";
         position: absolute;
         left: 0;
         top: -10%;
-        height: 120%;
+        height: 110%;
         width: 2px;
         background: $red;
       }
@@ -252,20 +250,10 @@
         position: absolute;
         right: 0;
         top: -10%;
-        height: 120%;
+        height: 110%;
         width: 2px;
         background: $red;
       }
-      // &::before {
-      //   content: "";
-      //   position: absolute;
-      //   width: 30%;
-      //   height: 1px;
-      //   background: $gray;
-      //   bottom: -5px;
-      //   left: 50%;
-      //   transform: translate(-50%);
-      // }
     }
   }
 }
@@ -276,35 +264,55 @@
     .header-title {
       width: 70%;
       h3 {
-        font-size: 1.5rem;
+        font-size: 28px;
       }
       h1 {
-        font-size: 3.4rem;
+        font-size: 62px;
       }
       h2 {
-        font-size: 2rem;
+        font-size: 30px;
       }
       p {
-        font-size: 1.3rem;
+        font-size: 20px;
       }
     }
     .header-links {
-      ul {
-        li {
-          margin: 0 0 0 1rem;
-          a {
-            width: 42px;
-            height: 42px;
-            font-size: 32px;
-            transition: 0.2s;
+      justify-content: space-between;
+      width: 80%;
+      padding: 0 12px;
+      .header-links-mail {
+        a {
+          &::after {
+            font-size: 18px;
           }
         }
       }
-    }
-    .header-email {
-      bottom: 23%;
+      .header-links-other {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        a {
+          margin: 0;
+          margin-left: 30px;
+        }
+        &::after {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          left: unset;
+          right: 12px;
+          top: 50%;
+          transform: translate(0%, -50%);
+          height: 1px;
+          width: 100%;
+          background: $gray;
+        }
+      }
       a {
-        font-size: 1.3rem;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        transition: 0.2s;
       }
     }
   }

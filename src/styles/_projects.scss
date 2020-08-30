@@ -63,7 +63,7 @@
         position: relative;
         width: auto;
         height: 100%;
-        left: -50%;
+        left: -100%;
         opacity: 0.2;
       }
     }
@@ -80,15 +80,21 @@
           position: relative;
           display: inline-block;
           color: $white;
-          font-size: 22px;
+          font-size: 24px;
           width: auto;
           padding: 5px 0;
           margin-bottom: 10px;
         }
         p {
-          font-size: 15px;
+          font-size: 18px;
           color: $gray;
           width: 100%;
+          z-index: 999;
+          position: relative;
+          text-align: justify;
+        }
+        em {
+          font-size: 18px;
         }
       }
       .project-tools {
@@ -98,6 +104,7 @@
         span {
           color: $white;
           margin: 0 7px;
+          font-size: 18px;
         }
       }
       .project-buttons {
@@ -119,15 +126,29 @@
   }
 }
 
+@media only screen and (min-width: 425px) {
+  .projects {
+    .project-container {
+      .project-image {
+        img {
+          left: -85%;
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .projects {
     width: 80%;
+    margin-bottom: 200px;
     h2 {
       grid-area: title;
-      font-size: 28px;
+      font-size: 30px;
       display: inline-block;
       width: fit-content;
       padding-right: 15px;
+      margin-bottom: 70px;
       &::after {
         right: 0;
         width: 70%;
@@ -136,7 +157,8 @@
     }
     .project-container {
       width: 100%;
-      height: 350px;
+      height: 250px;
+      margin-bottom: 130px;
       padding: 0;
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -144,24 +166,39 @@
       gap: 10px;
       .project-image {
         img {
-          left: 0;
+          left: unset;
+          width: 100%;
           opacity: 1;
+        }
+      }
+      .project__data__container {
+        .project-desc {
+          p {
+            padding: 12px;
+            background: $black-blue;
+            &::before {
+              content: "";
+              z-index: -1;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              background: $blue-opacity;
+            }
+          }
         }
       }
     }
     .project-one,
     .project-three {
       .project-image {
-        grid-column: 1 / 8;
+        grid-column: 1 / 9;
         position: relative;
         top: 0%;
         width: 100%;
         height: 100%;
         border: 2px solid $blue;
-        img {
-          left: 0;
-          opacity: 1;
-        }
         &::before {
           display: none;
         }
@@ -175,12 +212,6 @@
         .project-desc {
           h3 {
             align-self: flex-end;
-            font-size: 24px;
-          }
-          p {
-            font-size: 16px;
-            padding: 7px 10px;
-            background: $blue;
           }
         }
         .project-tools {
@@ -198,16 +229,12 @@
     }
     .project-two {
       .project-image {
-        grid-column: 6 / -1;
+        grid-column: 5 / -1;
         position: relative;
         top: 0%;
         width: 100%;
         height: 100%;
         border: 2px solid $blue;
-        img {
-          left: 0;
-          opacity: 1;
-        }
         &::before {
           display: none;
         }
@@ -218,17 +245,6 @@
         flex-direction: column;
         position: absolute;
         padding: 0 10px;
-        .project-desc {
-          h3 {
-            align-self: flex-start;
-            font-size: 24px;
-          }
-          p {
-            font-size: 16px;
-            padding: 7px 10px;
-            background: $blue;
-          }
-        }
         .project-tools {
           align-self: flex-start;
           margin: 10px 0 2rem;
@@ -253,6 +269,7 @@
       font-size: 32px;
     }
     .project-container {
+      height: 320px;
       .project-image {
         &::after {
           content: "";
@@ -269,27 +286,51 @@
         &:hover::after {
           opacity: 0;
         }
+        img {
+          width: 100%;
+        }
       }
       .project__data__container {
+        padding: 0;
         .project-desc {
           h3 {
             font-size: 28px;
           }
           p {
-            font-size: 18px;
+            font-size: 20px;
           }
           em {
-            font-size: 18px;
+            font-size: 20px;
           }
         }
         .project-tools {
           span {
-            font-size: 18px;
+            font-size: 20px;
           }
         }
         .project-buttons {
           a {
+            margin: 0;
             font-size: 30px;
+          }
+        }
+      }
+    }
+    .project-one,
+    .project-three {
+      .project__data__container {
+        .project-buttons {
+          a {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    .project-two {
+      .project__data__container {
+        .project-buttons {
+          a {
+            margin-right: 20px;
           }
         }
       }
@@ -310,16 +351,16 @@
             font-size: 30px;
           }
           p {
-            font-size: 20px;
+            font-size: 22px;
           }
 
           em {
-            font-size: 20px;
+            font-size: 22px;
           }
         }
         .project-tools {
           span {
-            font-size: 20px;
+            font-size: 22px;
           }
         }
         .project-buttons {
@@ -327,6 +368,22 @@
             font-size: 32px;
           }
         }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1575px) {
+  .projects {
+    .project-one,
+    .project-three {
+      .project-image {
+        grid-column: 1 / 8;
+      }
+    }
+    .project-two {
+      .project-image {
+        grid-column: 6 / -1;
       }
     }
   }

@@ -1,10 +1,11 @@
 require("./styles/main.scss");
 require("./images/code.jpg");
 require("./images/design.png");
-require("./images/face.jpg");
+require("./images/me.jpg");
 require("./images/git.png");
 require("./images/javascript.svg");
 require("./images/react.svg");
+require("./images/bookstore.png");
 
 window.addEventListener("scroll", () => {
   const asideLinks = document.querySelector(".aside-links");
