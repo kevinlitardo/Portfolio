@@ -67,7 +67,7 @@
       }
     }
     .project__data__container {
-      width: 100%;
+      width: 80%;
       height: auto;
       z-index: 999;
       .project-desc {
@@ -171,6 +171,7 @@
         }
       }
       .project__data__container {
+        width: 100%;
         .project-desc {
           p {
             padding: 12px;
