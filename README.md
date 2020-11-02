@@ -17,13 +17,13 @@ Web Design technologies 🖍️
 ## My other featured projects:
 
 <!-- prettier-ignore -->
-   [LectoTMO Clone](https://github.com/Ricqrdo/Library-react-webpack) 🖥️
+   [LectoTMO Clone](https://github.com/Ricqrdo/lectortmo-react) 🖥️
 
 <!-- prettier-ignore -->
-   [Facebook Clone](https://github.com/Ricqrdo/Library-react-webpack) 📚
+   [Facebook Clone](https://github.com/Ricqrdo/Facebook-clone) 📚
 
 <!-- prettier-ignore -->
-   [LectorTMO API rest](https://github.com/Ricqrdo/Library-react-webpack) ⌨️
+   [LectorTMO API rest](https://github.com/Ricqrdo/lectortmo-API) ⌨️
 
 ## Also you can follow me on my social networks too and know more about me!
 
