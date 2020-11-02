@@ -1,0 +1,58 @@
+.contact {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 2rem 0 4rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  justify-content: center;
+  align-content: center;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "title"
+    "links";
+  background-image: url(../images/bg-4.png);
+  background-position: 15% 0;
+  background-size: cover;
+  overflow: hidden;
+  z-index: 2;
+  &::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    right: 53%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: $black;
+    transform: skew(-13deg);
+    border-right: 2px solid $purple;
+  }
+  &::after {
+    content: "";
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      0deg,
+      rgba(14, 11, 2, 0.99) 7%,
+      rgba(14, 11, 2, 0.01) 23%,
+      rgba(14, 11, 2, 0.01) 80%,
+      rgba(14, 11, 2, 0.99) 94%
+    );
+  }
+  h2 {
+    grid-area: title;
+    text-align: center;
+    font-size: 40px;
+    color: $green;
+    margin: 1.5rem 0;
+    font-family: "Mulish", sans-serif;
+    z-index: 3;
+  }
+}

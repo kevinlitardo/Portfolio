@@ -1,0 +1,22 @@
+// $black-purple: #0e0b16;
+// $purple: #562af3;
+$black-blue: #090f1a;
+$light-blue: #0e192c;
+$blue-opacity: #1e345081;
+$blue: #1e3450;
+$red: #ce2329ee;
+$red-opacity: #ce232911;
+$white: #f1f1f1f5;
+$gray: #b1b1b1da;
+$linkedin: #0e76a8;
+$github: #24292e;
+$twitter: #00acee;
+// font-family: 'Overpass', sans-serif;
+// font-family: 'Mulish', sans-serif;
+
+@mixin flex($jc, $ai, $fd) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $fd;
+}

@@ -1,0 +1,169 @@
+.about {
+  width: 85%;
+  margin: auto;
+  height: auto;
+  position: relative;
+  padding: 4rem 0;
+  @include flex(space-evenly, center, column);
+  h2 {
+    width: auto;
+    display: block;
+    position: relative;
+    align-self: flex-start;
+    margin-bottom: 3rem;
+    padding-left: 15px;
+    font-size: 24px;
+    color: $white;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -10%;
+      height: 120%;
+      width: 2px;
+      background: $red;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0%;
+      top: 50%;
+      transform: translate(150%, -50%);
+      height: 1px;
+      width: 40%;
+      background: $gray;
+    }
+  }
+  .about-image {
+    position: relative;
+    width: 65%;
+    height: auto;
+    margin: 3rem auto;
+    @include flex(center, center, row);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    &::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      width: 100%;
+      height: 100%;
+      border: 2px solid $blue;
+    }
+  }
+  .about-desc {
+    width: 100%;
+    padding: 1rem;
+    p {
+      color: $gray;
+      font-size: 18px;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    em {
+      font-size: 18px;
+    }
+    i {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .about {
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: autp auto;
+    gap: 10px;
+    align-items: center;
+    grid-template-areas:
+      "title title"
+      "image desc";
+    h2 {
+      grid-area: title;
+      width: max-content;
+      display: block;
+      position: relative;
+      align-self: flex-start;
+      margin-bottom: 3rem;
+      padding-left: 15px;
+      color: $white;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -10%;
+        height: 120%;
+        width: 2px;
+        background: $red;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0%;
+        top: 50%;
+        transform: translate(110%, -50%);
+        height: 1px;
+        width: 100%;
+        background: $gray;
+      }
+    }
+    .about-image {
+      grid-area: image;
+      width: 80%;
+      grid-column: 1 / span 5;
+    }
+    .about-desc {
+      grid-area: desc;
+      grid-column: 6 /-1;
+      text-align: justify;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .about {
+    width: 70%;
+    margin-top: 250px;
+    h2 {
+      font-size: 32px;
+    }
+    .about-desc {
+      p {
+        font-size: 20px;
+      }
+      em {
+        font-size: 20px;
+      }
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .about {
+    width: 55%;
+    h2 {
+      font-size: 34px;
+    }
+    .about-desc {
+      p {
+        font-size: 22px;
+        em {
+          font-size: 22px;
+        }
+        strong {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

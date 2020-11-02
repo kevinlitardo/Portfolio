@@ -1,0 +1,264 @@
+.techs {
+  width: 85%;
+  height: auto;
+  margin: auto;
+  padding: 4rem 0;
+  @include flex(center, center, column);
+  h2 {
+    width: auto;
+    display: block;
+    position: relative;
+    align-self: flex-start;
+    margin-bottom: 3rem;
+    padding-left: 15px;
+    font-size: 24px;
+    color: $white;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -10%;
+      height: 120%;
+      width: 2px;
+      background: $red;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0%;
+      top: 50%;
+      transform: translate(150%, -50%);
+      height: 1px;
+      width: 20%;
+      background: $gray;
+    }
+  }
+  .techs-box {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 220px;
+    padding: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background: $blue-opacity;
+    @include flex(space-evenly, center, column);
+    h3 {
+      display: block;
+      position: relative;
+      color: $white;
+      font-size: 22px;
+      width: auto;
+      padding: 5px 5px;
+      text-align: center;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0%;
+        top: 50%;
+        transform: translate(-100%, -50%);
+        height: 1px;
+        width: 30%;
+        background: $gray;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0%;
+        top: 50%;
+        transform: translate(100%, -50%);
+        height: 1px;
+        width: 30%;
+        background: $gray;
+      }
+    }
+    ul {
+      width: auto;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10px;
+      padding: 0px;
+      margin: 18px 0 0;
+      list-style: none;
+      z-index: 999;
+      li {
+        @include flex(flex-start, center, row);
+        position: relative;
+        margin-bottom: 10px;
+        i {
+          display: block;
+          color: $red;
+          font-size: 8px;
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+        span {
+          display: block;
+          color: $gray;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+  .software {
+    &::before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url(../images/javascript.svg);
+      background-position: center;
+      background-size: cover;
+      opacity: 0.07;
+    }
+  }
+  .frameworks {
+    &::before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      bottom: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url(../images/react.svg);
+      background-position: center;
+      background-size: cover;
+      opacity: 0.07;
+    }
+  }
+  .tools {
+    &::before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      bottom: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url(../images/git.png);
+      background-position: center;
+      background-size: cover;
+      opacity: 0.08;
+    }
+  }
+  .patterns {
+    &::before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: -12%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url(../images/design.png);
+      background-position: center;
+      background-size: 250px 280px;
+      background-repeat: no-repeat;
+      opacity: 0.09;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .techs {
+    margin-bottom: 200px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 1rem;
+    grid-template-areas:
+      "title title"
+      "software frameworks"
+      "tools patterns";
+    h2 {
+      grid-area: title;
+      display: inline-block;
+      width: fit-content;
+      padding-right: 15px;
+      margin-bottom: 55px;
+      &::after {
+        right: 0;
+        width: 70%;
+        transform: translate(100%, -50%);
+      }
+    }
+    .techs-box {
+      width: auto;
+      height: calc(100% + 2%);
+    }
+    .software {
+      grid-area: software;
+    }
+    .frameworks {
+      grid-area: frameworks;
+    }
+    .tools {
+      grid-area: tools;
+    }
+    .patterns {
+      grid-area: patterns;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .techs {
+    width: 70%;
+    margin: 250px auto;
+    h2 {
+      font-size: 32px;
+    }
+    .techs-box {
+      height: 240px;
+      h3 {
+        font-size: 28px;
+      }
+      ul {
+        li {
+          i {
+            font-size: 10px;
+          }
+          span {
+            font-size: 21px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .techs {
+    width: 55%;
+    h2 {
+      font-size: 34px;
+    }
+    .techs-box {
+      height: 240px;
+      h3 {
+        font-size: 30px;
+      }
+      ul {
+        li {
+          i {
+            font-size: 10px;
+          }
+          span {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}
