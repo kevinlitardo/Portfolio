@@ -1,0 +1,44 @@
+---
+import TimelineItem, { type I_Timeline_item_data } from "./Timeline-item.astro";
+
+const EXPERIENCE: I_Timeline_item_data[] = [
+  {
+    date: "April 2020 - Present",
+    title: "Flex - Web app | Atenea Soluciones SA.",
+    description:
+      "Management of staff, equipment and paperwork for large companies, reports display and data complete control, includes administrative, general and auditory web apps, besides a sentry box mobile app. (Private)",
+    image: "/flex_shot_so.webp",
+    tags: [
+      "Typescript",
+      "React JS",
+      "React Native",
+      "Expo",
+      "Bootstrap",
+      "Mantine",
+      "Postman",
+    ],
+    link: null,
+  },
+  {
+    date: "July 2021",
+    title: "Migración Ecuador - Web app | Atenea Soluciones SA.",
+    description:
+      "Governmental system for the management of migration processes and consultations, with public and administrative web applications.",
+    image: "/oim_shot_so.webp",
+    tags: ["Javascript", "React JS", "Bootstrap"],
+    link: "https://servicio.migracion.gob.ec/",
+  },
+  {
+    date: "October 2022",
+    title: "B Realtik - Mobile App | Atenea Soluciones SA.",
+    description: "Real state mobile application, create, share and connect.",
+    image: "/brealtik_shot_so.webp",
+    tags: ["React Native", "Expo"],
+    link: "https://play.google.com/store/apps/details?id=com.brealtik.brealtikapp",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-2">
+  {EXPERIENCE.map((item) => <TimelineItem {...item} />)}
+</ol>

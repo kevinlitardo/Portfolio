@@ -1,0 +1,46 @@
+---
+import List from "./List.astro";
+
+import Javascript from "./icons/Javascript.astro";
+import Typescript from "./icons/Typescript.astro";
+import React from "./icons/React.astro";
+import Next from "./icons/Next.astro";
+import Flutter from "./icons/Flutter.astro";
+import Node from "./icons/Node.astro";
+import Express from "./icons/Express.astro";
+import Mongodb from "./icons/Mongodb.astro";
+import Git from "./icons/Git.astro";
+import Postman from "./icons/Postman.astro";
+import Npm from "./icons/Npm.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import Expo from "./icons/Expo.astro";
+import Vite from "./icons/Vite.astro";
+
+const TECHS = [
+  { name: "Javascript", icon: Javascript },
+  { name: "Typescript", icon: Typescript },
+  { name: "React JS", icon: React },
+  { name: "Next JS", icon: Next },
+  { name: "React Native", icon: React },
+  { name: "Flutter", icon: Flutter },
+  { name: "Node JS", icon: Node },
+  { name: "Express JS", icon: Express },
+  { name: "Mongo DB", icon: Mongodb },
+];
+
+const TOOLS = [
+  { name: "Git", icon: Git },
+  { name: "Postman", icon: Postman },
+  { name: "Npm", icon: Npm },
+  { name: "Tailwind", icon: Tailwind },
+  { name: "Bootstrap", icon: Bootstrap },
+  { name: "Expo", icon: Expo },
+  { name: "Vite", icon: Vite },
+];
+---
+
+<div class="flex flex-row justify-center ml-1 gap-10">
+  <List title="Technologies" list={TECHS} />
+  <List title="Tools" list={TOOLS} />
+</div>

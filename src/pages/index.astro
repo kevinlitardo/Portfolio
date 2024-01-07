@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/Section-container.astro";
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Timeline from "../components/Timeline.astro";
+import KnowledgeTools from "../components/Knowledge-tools.astro";
+import About from "../components/About.astro";
+
+import Linkedin from "../components/icons/Linkedin.astro";
+import Github from "../components/icons/Github.astro";
+import Outlook from "../components/icons/Outlook.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import Brain from "../components/icons/Brain.astro";
+import Info from "../components/icons/Info.astro";
+
+import LINKS from "../helpers/Links";
+---
+
+<Layout
+  title="Kevin's Portfolio - Developer and programmer web with 4 years of experience"
+  description="Kevin litardo's portfolio, developer and programmer web with 4 years of experience and knowledge in mobile and backend technologies"
+>
+  <main class="px-8">
+    <SectionContainer class="py-44">
+      <img
+        src="/me.webp"
+        alt="kevin's photo"
+        class="rounded-full w-20 h-20 md:w-36 md:h-36 bg-white mb-4 object-cover border-2 border-gray-100"
+      />
+
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row flex-wrap gap-2 pb-4"
+      >
+        Hi! I'm Kevin
+        <a
+          class="flex justify-center items-center"
+          href={LINKS.linkedin}
+          target="_blank"
+          rel="noopener"
+        >
+          <Badge class="bg-lime-400 text-lime-950">
+            Available for hire &rarr;
+          </Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl md:text-2xl text-wrap">
+        <span>+3 years of experience.</span>
+        <span class="text-blue-500 font-semibold"
+          >Web developer with knowledge in mobile and backend technologies.</span
+        > From Ecuador <img
+          class="w-6 inline-block"
+          src="/ecuador-flag.png"
+          alt="Ecuador's coat of arms"
+        />. <span class="opacity-80"
+          >Specialized in creating quality software.</span
+        >
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href={LINKS.linkedin}>
+          <Linkedin class="size-5" />
+          Linkedin
+        </SocialPill>
+
+        <SocialPill href={LINKS.github}>
+          <Github class="size-5" />
+          Github
+        </SocialPill>
+        <SocialPill href={`mailto:${LINKS.email}`}>
+          <Outlook class="size-5" />
+          {LINKS.email}
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer class="mb-24">
+      <h3 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-6" />
+        Trajectory
+      </h3>
+      <Timeline />
+    </SectionContainer>
+
+    <SectionContainer class="mb-24">
+      <h3 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Brain class="size-6" />
+        Knowledge and tools
+      </h3>
+      <KnowledgeTools />
+    </SectionContainer>
+
+    <SectionContainer class="mb-24">
+      <h3 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Info class="size-6" />
+        About me
+      </h3>
+      <About />
+    </SectionContainer>
+  </main>
+</Layout>
